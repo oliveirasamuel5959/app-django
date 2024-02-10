@@ -1,2 +1,10 @@
 ## run a command in one of your containers
 docker exec -it app /bin/bash
+
+## GIT
+
+# Push to remote repository
+git remote add https://github.com/oliveirasamuel5959/app-django.git
+git branch -M main
+git push -u origin main
+
