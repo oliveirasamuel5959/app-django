@@ -1,0 +1,22 @@
+version: '3.11'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - DEV=true
+    container_name: app
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: finance-app-db
+      MYSQL_ROOT_PASSWORD: Admin123
+    container_name: mysql_db

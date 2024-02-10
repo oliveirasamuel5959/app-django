@@ -1,0 +1,2 @@
+## run a command in one of your containers
+docker exec -it app /bin/bash
