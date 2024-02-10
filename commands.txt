@@ -1,10 +1,21 @@
 ## run a command in one of your containers
 docker exec -it app /bin/bash
 
-## GIT
+##### GIT ########
 
-# Push to remote repository
+Push to remote repository
 git remote add https://github.com/oliveirasamuel5959/app-django.git
 git branch -M main
 git push -u origin main
 
+check origin is set by running
+git remote -v
+
+So, go ahead, first of all, verify the actual remote version
+then remove the origin add the comment
+and copy the repo URL into the project files.
+$ git remote -v
+$ git remote rm origin
+$ git commit -m "your commit"
+$ git remote add origin https://github.com/user/repo.git
+$ git push -f origin master
