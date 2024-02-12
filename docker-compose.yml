@@ -1,4 +1,4 @@
-version: '3.11'
+version: '3.9'
 
 services:
   app:
@@ -18,5 +18,5 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: finance-app-db
-      MYSQL_ROOT_PASSWORD: Admin123
+      MYSQL_ROOT_PASSWORD: Admin123!
     container_name: mysql_db

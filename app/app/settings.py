@@ -80,7 +80,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": 'finance-app-db',
         "USER": 'root',
-        "PASSWORD": 'Admin123',
+        "PASSWORD": 'Admin123!',
         "HOST": 'db',
         "PORT": '3306',
     }
