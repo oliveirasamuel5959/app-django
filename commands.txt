@@ -19,3 +19,7 @@ $ git remote rm origin
 $ git commit -m "your commit"
 $ git remote add origin https://github.com/user/repo.git
 $ git push -f origin master
+
+
+##### Run a Django project #####
+docker-compose run --rm app sh -c "python manage.py runserver"

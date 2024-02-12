@@ -11,12 +11,18 @@ services:
       - "8000:8000"
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./app:/app
     depends_on:
       - db
   db:
-    image: mysql
+    image: mysql:latest
+    volumes:
+      - ./data/db:/var/lib/mysql
     restart: always
     environment:
       MYSQL_DATABASE: finance-app-db
       MYSQL_ROOT_PASSWORD: Admin123!
+    ports:
+      - '3307:3306'
     container_name: mysql_db

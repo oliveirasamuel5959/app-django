@@ -9,9 +9,16 @@ WORKDIR /app
 EXPOSE 8000
 
 ARG DEV=false
-RUN pip install --upgrade pip && \
-    pip install -r /tmp/requirements.txt
 
+RUN set- e; apk add --no-cache --virtual .build-deps gcc libc-dev linux-headers mariadb-dev python3-dev postgresql-dev ;
+RUN pip install --upgrade pip && pip install -r /tmp/requirements.txt && adduser --disabled-password --no-create-home app
+
+
+#RUN pip install --no-cache-dir --upgrade pip && \
+#    pip install --no-cache-dir -r /tmp/requirements.txt
+
+#RUN pip install --upgrade pip && \
+#    pip install -r /tmp/requirements.txt
 
 # CMD python manage.py runserver
 
